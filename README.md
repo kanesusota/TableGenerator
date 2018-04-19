@@ -8,3 +8,11 @@ pythonでExcelからなんか作る
 ```
 pip install xlrd
 ```
+
+## xlrd
+### ブックのオープン
+```
+import xlrd
+ 
+book = xlrd.open_workbook('sample.xlsx')
+```
