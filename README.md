@@ -29,3 +29,12 @@ for col in range(sheet.ncols):
     for row in range(sheet.nrows):
         print(sheet.cell(row, col).value)
 ```
+
+## テキスト出力
+### write
+文字列を引数に取ってファイルに書き出す。
+```
+f = open("text.txt", "w")
+f.write(sheet.cell(0,0).value)
+f.close()
+```
