@@ -11,9 +11,21 @@ sheet = book.sheet_by_index(0)
 
 f = open("text.txt", "w")
 
-for col in range(sheet.ncols):
-    for row in range(sheet.nrows):
-        print(sheet.cell(row, col).value)
+#各行をlist
+x = []
+for row in range(sheet.nrows):
+    y = []
+    for col in range(sheet.ncols):
+        y.append(sheet.cell(row, col).value)
+    x.append(y)
 
-f.write(sheet.cell(0,0).value)
+print(x)
+
+#1行ずつ出力
+for i in x:
+    for j,k in enumerate(i):
+        if j == len(i)-1:
+            f.write(k + "\n")
+        else:
+            f.write(k+ ", ")
 f.close()
